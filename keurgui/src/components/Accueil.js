@@ -1,22 +1,27 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes, FaUser, FaSearch, FaComment, FaPhoneAlt, FaExclamationCircle } from 'react-icons/fa';
+import Palette from './Palette';
 import './Accueil.css';
 
 function Accueil() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // État pour gérer l'ouverture du menu
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [backgroundColor, setBackgroundColor] = useState('#FFFFFF'); // Blanc par défaut
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); // Inverser l'état du menu
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <div className="accueil-container">
-      {/* Menu principal (en desktop) */}
+    <div className="accueil-container" style={{ backgroundColor: backgroundColor, color: backgroundColor === '#000000' ? '#FFFFFF' : '#000000' }}>
+      {/* Palette de couleurs */}
+      <Palette onColorChange={setBackgroundColor} />
+
+      {/* Navbar principale */}
       <nav className="navbar">
         <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
           <li className="logo">
-            <img src={require('./assets/logo1.png')} alt="Logo" className="logo-img" />
+            <img src={require('./assets/logo.png')} alt="Logo" className="logo-img" />
           </li>
           <li><Link to="/accueil" className="navbar-link">Accueil</Link></li>
           <li><Link to="/rendezvous" className="navbar-link">Rendez-vous</Link></li>
@@ -26,20 +31,18 @@ function Accueil() {
           <li><Link to="/user" className="navbar-link user-link"><FaUser /></Link></li>
         </ul>
 
-        {/* Bouton hamburger */}
         <button className="hamburger-btn" onClick={toggleMenu}>
           {isMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </nav>
 
-      {/* Menu secondaire (footer, etc.) */}
+      {/* Menu secondaire */}
       <nav className="secondary-navbar">
         <div className="secondary-navbar-links">
           <Link to="/chat" className="navbar-link"><FaComment /> Chat</Link>
           <Link to="/joindre-medecin" className="navbar-link"><FaPhoneAlt /> Joindre Médecin</Link>
           <Link to="/detection-anomalie" className="navbar-link"><FaExclamationCircle /> Détection Anomalie</Link>
 
-          {/* Barre de recherche avec icône dedans */}
           <div className="search-btn-container">
             <input type="text" placeholder="Rechercher..." className="search-input"/>
             <button className="search-btn">
@@ -48,6 +51,9 @@ function Accueil() {
           </div>
         </div>
       </nav>
+
+      {/* Contenu après sélection de couleur */}
+      
     </div>
   );
 }

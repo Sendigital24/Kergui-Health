@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-container">
         {/* Logo et Nom Kergui à gauche */}
         <div className="logo-section">
-        <img src={require('./assets/logo1.png')} alt="Logo" className="logo-img" />
+        <img src={require('./assets/logo.png')} alt="Logo" className="logo-img" />
        
           <p className="logo-name">Kergui</p>
         </div>

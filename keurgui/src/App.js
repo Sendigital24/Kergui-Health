@@ -9,8 +9,10 @@ import Footer from './components/Footer';
 function App() {
   return (
     <Router>
+      <Accueil/>
       <Routes>
-        <Route path="/" element={<Accueil />} />
+        {/**
+        <Route path="/" element={<Accueil />} /> */}
         <Route path="/rendezvous" element={<Rendezvous />} />
         <Route path="/consulter-medecin" element={<ConsulterMedecin />} />
       </Routes>

@@ -1,0 +1,58 @@
+/* Mode clair par défaut */
+.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  /* Mode sombre */
+  .dark-mode {
+    background-color: #212529;
+    color: #ffffff;
+  }
+  
+  /* Icône de palette */
+  .palette-container {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+  }
+  
+  .palette-icon {
+    font-size: 10px;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    bottom: 20px;
+  }
+  
+  /* Icône de mode ensoleillé ou sombre */
+  .mode-toggle {
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    bottom:20px;
+    right: 50px;
+  }
+  
+  /* Palette de couleurs */
+  .palette-colors {
+    display: flex;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+    margin-top: 10px;
+  }
+  
+  .palette-color {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-bottom: 13px;
+  }
+  
+  .palette-color:hover {
+    transform: scale(1.2);
+  }
+  
