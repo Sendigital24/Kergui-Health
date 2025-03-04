@@ -21,7 +21,7 @@ function Accueil() {
       <nav className="navbar">
         <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
           <li className="logo">
-            <img src={require('./assets/logo.png')} alt="Logo" className="logo-img" />
+            <img src={require('./assets/logo.png')} alt="Logo" className="LOGO-img" />
           </li>
           <li><Link to="/accueil" className="navbar-link">Accueil</Link></li>
           <li><Link to="/rendezvous" className="navbar-link">Rendez-vous</Link></li>

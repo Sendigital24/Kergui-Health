@@ -18,12 +18,12 @@
 }
 
 /* Logo */
-.logo {
+.LOGO {
     display: flex;
     align-items: center;
 }
 
-.logo-img {
+.LOGO-img {
     width: 90px;
     height: auto;
 }
@@ -107,7 +107,7 @@
     cursor: pointer;
 }
 
-/* Footer */
+
 .secondary-navbar {
     background-color: #E6F7FF;
     padding: 1rem;

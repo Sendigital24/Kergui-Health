@@ -5,13 +5,14 @@ import Rendezvous from "./components/Rendezvous";
 import ConsulterMedecin from "./components/ConsulterMedecin";
 import Connexion from "./Authentification/Connexion";
 import Inscription from "./Authentification/Inscription";
-//import Dashboard from "./Dashboard/Dashboard"; // Import du Dashboard
+import Dashboard from "./Dashboard/Dashboard"; // Import du Dashboard
 import Footer from "./components/Footer";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Layout() {
   const location = useLocation();
   const isAuthPage = location.pathname === "/connexion" || location.pathname === "/inscription";
-  const isDashboard = location.pathname.startsWith("/dashboard"); 
+  const isDashboard = location.pathname.startsWith("/dashboard"); // Vérifier si on est sur Dashboard
 
   return (
     <>
@@ -21,6 +22,7 @@ function Layout() {
         <Route path="/consulter-medecin" element={<ConsulterMedecin />} />
         <Route path="/connexion" element={<Connexion />} />
         <Route path="/inscription" element={<Inscription />} />
+        <Route path="/dashboard/*" element={<Dashboard />} /> 
       </Routes>
       {!isAuthPage && !isDashboard && <Footer />} {/* Masquer le footer sur dashboard */}
     </>

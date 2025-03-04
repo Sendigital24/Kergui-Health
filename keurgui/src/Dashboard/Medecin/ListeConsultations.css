@@ -1,0 +1,31 @@
+/* Table styles */
+
+  
+  thead {
+    background-color: #f7fafc; /* couleur de fond des entêtes */
+  }
+
+  td, th {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #e2e8f0; /* Bordures entre les cellules */
+  }
+  
+  .actions .icon {
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
+  .actions .icon:hover {
+    color: blue;
+  }
+  
+  /* Classes pour lignes impaires/paire */
+  tr:nth-child(even) {
+    background-color: #f0f4f8;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  

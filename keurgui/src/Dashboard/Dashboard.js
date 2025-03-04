@@ -1,28 +1,43 @@
 import React, { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
-import { Routes, Route } from "react-router-dom";
-import "./dashboard.css"; 
-const Dashboard = () => {
-  const [activeCategory, setActiveCategory] = useState(null);
+import ListeConsultations from "./Medecin/ListeConsultations";
+import DossiersPatients from "./Medecin/DossiersPatients";
+import { FaBars, FaTimes } from "react-icons/fa";
+
+function Dashboard() {
+  const [sidebarVisible, setSidebarVisible] = useState(false);
+
+  // Fonction pour basculer l'état de visibilité du sidebar
+  const toggleSidebar = () => setSidebarVisible(!sidebarVisible);
+
+  const closeSidebar = () => setSidebarVisible(false);
 
   return (
-    <div className="dashboard-container">
-    
-      <div className="main-content">
-        <Header />
-        
-      <Sidebar setActiveCategory={setActiveCategory} />
-        <div className="content-section">
+    <div className="container-fluid">
+      {/* Bouton hamburger pour ouvrir ou fermer le sidebar */}
+      <button className="btn btn-light d-md-none" onClick={toggleSidebar}>
+        {sidebarVisible ? <FaTimes /> : <FaBars />}
+      </button>
+
+      <div className="row">
+        {/* Sidebar - visible si sidebarVisible est true */}
+        <div className={`col-md-2 ${sidebarVisible ? "d-block" : "d-none d-md-block"}`}>
+          <Sidebar sidebarVisible={sidebarVisible} onClose={closeSidebar} />
+        </div>
+
+        {/* Contenu - occupe 8 colonnes */}
+        <div className="col-md-10">
+          <Header />
           <Routes>
-            <Route path="medecin" element={<div>Contenu Médecin</div>} />
-            <Route path="patient" element={<div>Contenu Patient</div>} />
-            {/* Ajouter des routes supplémentaires pour chaque sous-catégorie */}
+            <Route path="medecin/consultations" element={<ListeConsultations />} />
+            <Route path="medecin/dossiers" element={<DossiersPatients />} />
           </Routes>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default Dashboard;

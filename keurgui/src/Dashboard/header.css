@@ -1,26 +1,38 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.slider-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slider-text {
+  font-size: 18px;
+  color: orange;
+  white-space: nowrap; /* Assure que le texte reste sur une seule ligne */
+  animation: slide 30s linear infinite; /* Augmenté la durée de 8s à 20s */
+}
+
+/* Animation de défilement du texte */
+@keyframes slide {
+  0% {
+    transform: translateX(100%); /* Commence à droite */
   }
-  
-  .search-container {
-    flex: 1;
-    text-align: center;
+  100% {
+    transform: translateX(-100%); /* Défile complètement à gauche */
   }
-  
-  .search-bar {
-    width: 50%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  .user-icon {
-    display: flex;
-    align-items: center;
-  }
-  
+}
+
+.user-icon {
+  display: flex;
+  align-items: center;
+}
