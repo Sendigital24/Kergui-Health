@@ -7,7 +7,7 @@ const Modal = ({ onClose, size, children }) => {
       <div className={`modal-dialog ${modalSizeClass}`}>
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 className="modal-title" id="exampleModalLabel"></h5>
             <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={onClose}>
               <span aria-hidden="true">&times;</span>
             </button>

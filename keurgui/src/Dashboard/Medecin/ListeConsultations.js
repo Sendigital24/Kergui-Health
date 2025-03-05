@@ -31,9 +31,12 @@ const ListeConsultations = () => {
   };
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid ">
+      <div style={{marginLeft:'37px'}}>
       <TitleText title="Liste des Consultations" text="Liste des consultations à suivre" />
       <Button text="Ajouter une consultation" onClick={handleOpenModal} color="green" className="add-button" />
+      
+      </div>
       
       {/* Modal */}
       {modalOpen && (
@@ -76,7 +79,7 @@ const ListeConsultations = () => {
         </Modal>
       )}
 
-      <div className="consultations-table mt-4">
+      <div className="consultations-table mt-4"style={{width:'97%',marginLeft:'36px'}}>
         <table className="table table-bordered table-striped w-100">
           <thead>
             <tr className="table-light">

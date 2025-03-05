@@ -3,8 +3,9 @@ import { Route, Routes } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import ListeConsultations from "./Medecin/ListeConsultations";
-import DossiersPatients from "./Medecin/DossiersPatients";
+//import DossiersPatients from "./Medecin/DossiersPatients";
 import { FaBars, FaTimes } from "react-icons/fa";
+import DossiersPatients from "./Medecin/DossiersPatients";
 
 function Dashboard() {
   const [sidebarVisible, setSidebarVisible] = useState(false);

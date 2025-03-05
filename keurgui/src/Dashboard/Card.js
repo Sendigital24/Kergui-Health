@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/card.css"; // Import du fichier CSS
+import './card.css'; 
 
 const Card = ({ title, content, buttonText, onClick }) => {
   return (
