@@ -1,9 +1,15 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Importer useNavigate
 import logo from "../components/assets/logo2.png";
 import "./inscription.css";
 
 const Inscription = () => {
   const [role, setRole] = useState("patient");
+  const navigate = useNavigate(); // Hook pour la navigation
+
+  const handleConnexion = () => {
+    navigate("/connexion"); // Rediriger vers la page de connexion
+  };
 
   return (
     <div className="inscription-container">
@@ -32,7 +38,15 @@ const Inscription = () => {
             <label>Mot de passe</label>
             <input type="password" placeholder="Choisissez un mot de passe" />
           </div>
-          <button className="btn-inscription">S'inscrire</button>
+
+          <div className="form-actions">
+            <button type="button" className="btn-inscription" onClick={handleConnexion}>
+              Connexion
+            </button>
+            <button type="submit" className="btn-inscription">
+              S'inscrire
+            </button>
+          </div>
         </form>
       </div>
     </div>

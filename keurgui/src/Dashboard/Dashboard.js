@@ -3,9 +3,9 @@ import { Route, Routes } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import ListeConsultations from "./Medecin/ListeConsultations";
-//import DossiersPatients from "./Medecin/DossiersPatients";
-import { FaBars, FaTimes } from "react-icons/fa";
 import DossiersPatients from "./Medecin/DossiersPatients";
+import Messagerie from "./Medecin/Messagerie"; 
+import { FaBars, FaTimes } from "react-icons/fa";
 
 function Dashboard() {
   const [sidebarVisible, setSidebarVisible] = useState(false);
@@ -34,6 +34,7 @@ function Dashboard() {
           <Routes>
             <Route path="medecin/consultations" element={<ListeConsultations />} />
             <Route path="medecin/dossiers" element={<DossiersPatients />} />
+            <Route path="medecin/messagerie" element={<Messagerie />} />
           </Routes>
         </div>
       </div>
