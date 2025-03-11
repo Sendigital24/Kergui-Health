@@ -1,0 +1,33 @@
+.consultation-chart-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .chart-item {
+    margin-bottom: 30px;
+    padding: 15px;
+  }
+  
+  .chart-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  @media (min-width: 768px) {
+    .consultation-chart-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+  
+    .chart-item {
+      width: 48%; /* Chaque graphique prendra 48% de la largeur disponible */
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .chart-item {
+      width: 100%; /* Sur les petits écrans, chaque graphique prendra 100% de la largeur */
+    }
+  }
+  

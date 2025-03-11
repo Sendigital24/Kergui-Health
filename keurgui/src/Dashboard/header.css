@@ -1,40 +1,86 @@
 .header {
-  width: 95%;
-  margin-left: 47px;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
   padding: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .slider-container {
   flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
 }
 
 .slider-text {
   font-size: 18px;
-  color: orange;
-  white-space: nowrap; /* Assure que le texte reste sur une seule ligne */
-  animation: slide 30s linear infinite; /* Augmenté la durée de 8s à 20s */
-}
-
-/* Animation de défilement du texte */
-@keyframes slide {
-  0% {
-    transform: translateX(100%); /* Commence à droite */
-  }
-  100% {
-    transform: translateX(-100%); /* Défile complètement à gauche */
-  }
+  color: #333;
 }
 
 .user-icon {
-  display: flex;
-  align-items: center;
+  cursor: pointer;
 }
+.modal-overlay {
+  position: fixed;
+  top: 70px;
+  left: 1000px;
+  width: 20%;
+  height: 30%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  width: 30px;
+  margin-right: 20px;
+  z-index: 10000;
+}
+
+.close-modal {
+  position: absolute;
+  top: -7px;
+  right: px;
+  border: none;
+  background:black;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+ 
+}
+
+.btns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.dcx, .mdp {
+
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%; 
+}
+
+.dcx {
+  background-color: red; 
+  color: white;
+  padding: 10px;
+}
+
+.mdp {
+  background-color: blue; 
+  color: white;font-size: 13px;
+  padding: 10px;
+}
+.navbar-link {border: none;}

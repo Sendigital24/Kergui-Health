@@ -1,0 +1,96 @@
+.temoignage-container {
+    padding: 40px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+  }
+  
+  .temoignage-title {
+    font-size: 28px;  
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .temoignage-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap; /* Permet aux cartes de passer sur plusieurs lignes */
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  
+  .temoignage-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 45%;  /* Chaque carte prend 45% de la largeur */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    box-sizing: border-box;
+  }
+  
+  .temoignage-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;  /* Espacement entre l'image et le texte */
+    width: 100%;
+  }
+  
+  .temoignage-image {
+    width: 60px;  /* L'image prend un peu plus de place */
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .temoignage-card-text {
+    flex: 1;  /* Le texte occupe le reste de la place */
+  }
+  
+  .temoignage-card-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+  
+  .temoignage-card-content {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .temoignage-cards {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;  /* Réduction de l'espace entre les cartes */
+    }
+  
+    .temoignage-title {
+      font-size: 20px;  /* Réduction de la taille du titre sur petits écrans */
+    }
+  
+    .temoignage-card {
+      width: 90%;  /* Les cartes prennent 90% de la largeur pour mieux s'adapter */
+      margin-bottom: 20px;
+    }
+  
+    .temoignage-image {
+      width: 50px;  /* Réduction de la taille des images sur petits écrans */
+      height: 50px;
+    }
+  
+    .temoignage-card-title {
+      font-size: 14px;  /* Taille du titre réduite */
+    }
+  
+    .temoignage-card-content {
+      font-size: 12px;  /* Taille du texte réduite */
+    }
+  }
+  

@@ -31,7 +31,7 @@ const ListeConsultations = () => {
   };
 
   return (
-    <div className="container-fluid ">
+    <div className="container-fluid mt-5 h-[50]"style={{width:'92%',background:'white',marginLeft:'66px',padding:'20px'}}>
       <div style={{marginLeft:'37px'}}>
       <TitleText title="Liste des Consultations" text="Liste des consultations à suivre" />
       <Button text="Ajouter une consultation" onClick={handleOpenModal} color="green" className="add-button" />

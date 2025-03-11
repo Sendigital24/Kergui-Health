@@ -58,6 +58,18 @@
   flex: 1; 
 }
 
+.forgot-password {
+  text-align: right;
+  font-size: 14px;
+  color: #007bff;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
 .btn-connexion:hover {
   background-color: #0056b3;
 }
@@ -83,7 +95,7 @@
 }
 
 .btn-inscription:hover {
-  background-color: #0056b3;
+  background-color: #0b6c27;
 }
 
 /* Conteneur des boutons en flex */

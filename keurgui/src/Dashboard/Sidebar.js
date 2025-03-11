@@ -45,6 +45,8 @@ const Sidebar = ({ sidebarVisible, onClose }) => {
 
         {showMedecinCategories && (
           <ul className="subcategory">
+            <li><Link to="/dashboard/medecin/consultations-chart" onClick={closeSidebar} className={location.pathname.includes("consultations-chart") ? "active-link" : ""}><FaFileInvoiceDollar /> Diagramme des consultations</Link></li>
+
             <li><Link to="/dashboard/medecin/consultations" onClick={closeSidebar} className={location.pathname.includes("consultations") ? "active-link" : ""}><FaCalendarCheck /> Liste des consultations</Link></li>
             <li><Link to="/dashboard/medecin/dossiers" onClick={closeSidebar} className={location.pathname.includes("dossiers") ? "active-link" : ""}><FaNotesMedical /> Dossiers des patients</Link></li>
             <li><Link to="/dashboard/medecin/messagerie" onClick={closeSidebar} className={location.pathname.includes("messagerie") ? "active-link" : ""}><FaCommentDots /> Messagerie</Link></li>

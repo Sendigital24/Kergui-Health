@@ -5,6 +5,7 @@ import Header from "./Header";
 import ListeConsultations from "./Medecin/ListeConsultations";
 import DossiersPatients from "./Medecin/DossiersPatients";
 import Messagerie from "./Medecin/Messagerie"; 
+import ConsultationChart from "./ConsultationChart";  // Importation du nouveau composant
 import { FaBars, FaTimes } from "react-icons/fa";
 
 function Dashboard() {
@@ -29,13 +30,15 @@ function Dashboard() {
         </div>
 
         {/* Contenu - occupe 8 colonnes */}
-        <div className="col-md-10">
+        <div className="col-md-10" style={{background:'#F0F0F2',height:'100%'}}>
           <Header />
           <Routes>
             <Route path="medecin/consultations" element={<ListeConsultations />} />
             <Route path="medecin/dossiers" element={<DossiersPatients />} />
             <Route path="medecin/messagerie" element={<Messagerie />} />
-          </Routes>
+            <Route path="medecin/consultations-chart" element={<ConsultationChart />} />
+
+             </Routes>
         </div>
       </div>
     </div>

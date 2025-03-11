@@ -2,13 +2,13 @@
 
   
   thead {
-    background-color: #f7fafc; /* couleur de fond des entêtes */
+    background-color: #f7fafc; 
   }
 
   td, th {
     padding: 10px;
     text-align: left;
-    border: 1px solid #e2e8f0; /* Bordures entre les cellules */
+    border: 1px solid #e2e8f0; 
   }
   
   .actions .icon {

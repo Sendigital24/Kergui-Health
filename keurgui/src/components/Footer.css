@@ -1,119 +1,145 @@
 /* Footer */
 .footer {
-    background-color: #333; 
-    color: white;
-    padding: 40px 0; 
-    margin: 0 auto; 
-    text-align: center;
-  }
-  
+  background-color: #333;
+  color: white;
+  padding: 40px 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 20px;
+}
+
+.logo {
+  width: 110px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.logo-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+  color: #fff;
+}
+
+.newsletter-section {
+  max-width: 500px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.newsletter-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.newsletter-section p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.newsletter-form {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.newsletter-form input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 250px;
+}
+
+.newsletter-form button {
+  padding: 10px 20px;
+  background-color: #01A768;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.newsletter-form button:hover {
+  background-color: #028B54;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.social-link {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 15px;
+  transition: color 0.3s;
+}
+
+.social-link:hover {
+  color: #01A768;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
   .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto; 
-    padding: 0 20px;
-  }
-  
-  .logo-section {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-right: 20px; 
-  }
-  
-  .logo {
-    width: 110px; 
-    height: auto;
-    margin-right: 10px;
-  }
-  
-  .logo-name {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 30px;
-    color: #01A768;
-  }
-  
-  .newsletter-section {
-    max-width: 500px;
-    text-align: center;
-    margin: 0 auto;
-  }
-  
-  .newsletter-section h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .newsletter-section p {
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-  
-  .newsletter-form {
-    display: flex;
-    margin-bottom: 20px;
-    justify-content: center;
-  }
-  
-  .newsletter-form input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 10px;
-    width: 250px;
-  }
-  
-  .newsletter-form button {
-    padding: 10px 20px;
-    background-color: #01A768;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .newsletter-form button:hover {
-    background-color: #028B54;
-  }
-  
-  .social-links {
-    display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .social-links {
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .logo-section {
     justify-content: center;
-    margin-left: 20px; /* Ajouter un espace entre les sections */
+    margin-bottom: 20px;
   }
-  
-  .social-link {
-    color: white;
-    font-size: 24px;
-    margin-bottom: 15px;
-    transition: color 0.3s;
+
+  .newsletter-form {
+    flex-direction: column; /* Empile les éléments en colonne sur petits écrans */
+    align-items: center;
+    width: 100%; /* La section formulaire prend toute la largeur */
   }
-  
-  .social-link:hover {
-    color: #01A768;
+
+  .newsletter-form input {
+    width: 80%; /* Limite la largeur de l'input pour éviter qu'il déborde */
+    margin-bottom: 10px; /* Ajoute un espace sous l'input */
   }
-  
-  @media screen and (max-width: 768px) {
-    .footer-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .social-links {
-      align-items: center;
-      margin-left: 0; /* Supprimer l'espace à gauche des icônes sur petits écrans */
-    }
-  
-    .logo-section {
-      justify-content: center;
-      margin-bottom: 20px;
-    }
+
+  .newsletter-form button {
+    width: 80%; /* Limite la largeur du bouton pour l'adapter à l'input */
+    margin-top: 10px; /* Espace entre l'input et le bouton */
   }
-  
+}
+
+@media screen and (max-width: 480px) {
+  .newsletter-form input {
+    width: 90%; /* Largeur encore réduite pour les très petits écrans */
+  }
+
+  .newsletter-form button {
+    width: 90%; /* Idem pour le bouton */
+  }
+}

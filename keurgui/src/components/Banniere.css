@@ -1,0 +1,106 @@
+.banniere-container {
+    width: 100%;
+    height: 100vh; /* La bannière prend toute la hauteur de la fenêtre */
+    display: flex;
+    flex-direction: column; /* Ajoute la disposition en colonne */
+    justify-content: space-between; /* Espacement entre le texte et la section Service */
+    align-items: center;
+    background-image: url("/src/components/assets/fond.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    padding: 0 20px; /* Ajout d'un padding pour éviter les bords collés */
+  }
+  /* Banniere.css */
+.banniere-container .slider-container .slider-text {
+    font-size: 30px;
+    color: white !important; /* Garantir que le texte soit en blanc */
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(255, 165, 0, 0.7);
+    white-space: nowrap;
+    animation: slide 10s linear infinite;
+  }
+  
+  .slider-container {
+    flex-grow: 1; /* Prend l'espace restant */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%; /* Utilise toute la largeur disponible */
+    max-width: 800px; /* Limite la largeur maximale */
+    font-size: 40px; /* Augmenter la taille du texte */
+    color: white;
+  }
+  
+  .slider-text {
+    font-size: 40px; /* Augmenter la taille du texte */
+    color: white; /* Texte en blanc */
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(255, 165, 0, 0.7); /* Ombre orange */
+    white-space: nowrap; /* Empêche le texte de se casser en plusieurs lignes */
+    animation: slide 10s linear infinite; /* Animation de défilement du texte */
+  }
+  
+  /* Animation de défilement du texte */
+  @keyframes slide {
+    0% {
+      transform: translateX(100%); /* Commence à droite */
+    }
+    100% {
+      transform: translateX(-100%); /* Défile à gauche */
+    }
+  }
+  
+  /* Section Service en bas 
+   .service-section {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin-top: 20px; /* Ajout d'un espace entre la bannière et la section service */
+
+  
+ 
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .banniere-container {
+      height: auto; /* En mode mobile, la hauteur devient automatique */
+      min-height: 50vh; /* La bannière doit prendre au moins la moitié de la hauteur de l'écran */
+    }
+  
+    .slider-text {
+      font-size: 22px; 
+      margin-top: 30px;
+      text-align: center;
+    }
+  
+    .service-section {
+      margin-top: 50px; 
+      padding: 15px 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .banniere-container {
+      height: auto; /* En mode mobile, la hauteur devient automatique */
+      min-height: 50vh; /* La bannière doit prendre au moins la moitié de la hauteur de l'écran */
+    }
+  
+    .slider-text {
+      font-size: 18px; /* Taille de texte plus petite pour les petits écrans */
+    }
+  
+    .service-section {
+      margin-top: 0; /* Pas de marge supplémentaire en bas de la bannière */
+      padding: 10px 0; /* Réduit le padding de la section service */
+    }
+  }
+  

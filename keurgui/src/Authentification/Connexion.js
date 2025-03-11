@@ -5,10 +5,39 @@ import "./connexion.css";
 
 const Connexion = () => {
   const [role, setRole] = useState("patient");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate(); // Hook pour la navigation
 
-  const handleInscription = () => {
-    navigate("/inscription"); // Rediriger vers la page d'inscription
+  // Fonction de connexion
+  const handleConnexion = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://127.0.0.1:8000/Connexion/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password, user_type: role }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Vérifie le rôle et redirige
+        if (data.user_type === "patient") {
+          navigate("/accueil");
+        } else if (data.user_type === "medecin") {
+          navigate("/dashboard");
+        }
+      } else {
+        alert("Échec de la connexion. Vérifiez vos identifiants.");
+      }
+    } catch (error) {
+      console.error("Erreur lors de la connexion :", error);
+      alert("Une erreur est survenue. Réessayez plus tard.");
+    }
   };
 
   return (
@@ -18,7 +47,7 @@ const Connexion = () => {
           <img src={logo} alt="Logo" className="logo-img" />
         </div>
         <h2 className="titre">Connexion</h2>
-        <form>
+        <form onSubmit={handleConnexion}>
           <div className="form-group">
             <label>Rôle</label>
             <select value={role} onChange={(e) => setRole(e.target.value)}>
@@ -28,24 +57,44 @@ const Connexion = () => {
           </div>
           <div className="form-group">
             <label>Email</label>
-            <input type="email" placeholder="Entrez votre email" />
+            <input
+              type="email"
+              placeholder="Entrez votre email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
           </div>
           <div className="form-group">
             <label>Mot de passe</label>
-            <input type="password" placeholder="Entrez votre mot de passe" />
+            <input
+              type="password"
+              placeholder="Entrez votre mot de passe"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
           </div>
-          
-        </form>
 
-        {/* Conteneur des boutons "Se connecter" et "S'inscrire" */}
-        <div className="button-container">
-        <button className="btn-inscription" >
-            Se connecter
-          </button>
-          <button className="btn-inscription" onClick={handleInscription}>
-            S'inscrire
-          </button>
-        </div>
+          <div className="forgot-password">
+            <a href="/mot-de-passe-oublie" className="link-forgot">
+              Mot de passe oublié ?
+            </a>
+          </div>
+
+          <div className="button-container">
+            <button type="submit" className="btn-connexion">
+              Se connecter
+            </button>
+            <button
+              type="button"
+              className="btn-inscription"
+              onClick={() => navigate("/inscription")}
+            >
+              S'inscrire
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );

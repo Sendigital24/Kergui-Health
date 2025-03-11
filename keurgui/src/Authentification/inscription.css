@@ -12,7 +12,7 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 96%;
+  width: 350px;
   max-width: 400px;
 }
 
@@ -60,7 +60,8 @@
 }
 
 .btn-inscription:hover {
-  background-color: #007BFF; /* Hover bleu */
+  
+  background-color: #0b6c27;
 }
 
 .form-actions {
@@ -71,4 +72,18 @@
 
 .form-actions button {
   width: 48%; /* Réduire la largeur des boutons */
+}
+.btn-connexion {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.btn-connexion:hover {
+  background-color: #0056b3;
 }

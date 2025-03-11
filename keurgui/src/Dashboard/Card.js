@@ -6,9 +6,11 @@ const Card = ({ title, content, buttonText, onClick }) => {
     <div className="card">
       <h3 className="card-title">{title}</h3>
       <p className="card-content">{content}</p>
-      <button onClick={onClick} className="card-button">
-        {buttonText}
-      </button>
+      {buttonText && ( // Le bouton s'affiche seulement si buttonText est fourni
+        <button onClick={onClick} className="card-button">
+          {buttonText}
+        </button>
+      )}
     </div>
   );
 };

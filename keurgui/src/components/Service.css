@@ -1,0 +1,84 @@
+/* Conteneur des services avec défilement horizontal */
+.service-container {
+  display: flex;
+  justify-content: start;
+  margin-top: 50px;
+  gap: 20px;
+  overflow-x: auto; 
+  padding-bottom: 20px;
+  scroll-behavior: smooth; 
+  flex-wrap: wrap; 
+  justify-content: center;color: black;
+}
+
+/* Carte de service */
+.service-card {
+  width: 300px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  cursor: pointer;
+  background-color: #fff;
+  flex-shrink: 0; /* Empêche les cartes de rétrécir lors du défilement */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+/* Card active */
+.service-card.active {
+  transform: scale(1.05); /* Agrandit légèrement la carte active */
+  border: 2px solid #1E90FF; /* Bord bleu pour la carte active */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Icône à gauche du titre */
+.card-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.icon {
+  font-size: 1.8rem; /* Taille de l'icône */
+  margin-right: 10px;
+}
+
+/* Contenu de la carte */
+.card-content {
+  font-size: 1rem;
+  color: #666;
+  transition: opacity 0.3s ease;
+  margin-top: 10px;
+}
+
+/* Modifier l'apparence au survol */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  /* Pour les petits écrans, on place les cartes dans une colonne et les centre */
+  .service-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .service-card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Encore plus petit, sur des écrans très petits */
+@media (max-width: 480px) {
+  .service-card {
+    width: 100%; 
+  }
+}

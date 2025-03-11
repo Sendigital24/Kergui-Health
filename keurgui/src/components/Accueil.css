@@ -32,7 +32,6 @@
 .navbar-links {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -43,7 +42,7 @@
     font-size: 1.125rem;
     text-decoration: none;
     transition: color 0.3s ease;
-    margin-left: 50px;
+    margin-left: 20px;
 }
 
 .navbar-link:hover {
@@ -159,6 +158,33 @@
     color: #007BFF;
     font-size: 1.25rem;
 }
+
+/* Styles simplifiés pour le modal */
+.modal {
+    position: absolute;
+    z-index: 1000;
+    background-color: transparent; /* Aucune couleur de fond */
+    box-shadow: none; /* Pas d'ombre portée */
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal button {
+    margin: 5px 0;
+    padding: 10px;
+
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
 /* RESPONSIVE DESIGN */
 /* Responsiveness */
 @media (max-width: 768px) {
@@ -167,19 +193,19 @@
     }
 
     .navbar-links {
-        display: none; /* Cacher les liens par défaut */
+        display: none; 
     }
 
     .navbar-links.active {
-        display: flex; /* Afficher les liens lorsque le menu est ouvert */
-        flex-direction: column; /* Mettre les liens en colonne */
-        gap: 1rem; /* Ajouter un écart entre les liens */
+        display: flex; 
+        flex-direction: column; 
+        gap: 1rem; 
         justify-content: center;
         align-items: center;
     }
 
     .hamburger-btn {
-        display: block; /* Afficher le bouton hamburger */
+        display: block; 
     }
 
     .secondary-navbar-links {
@@ -187,9 +213,7 @@
     }
 
     .search-btn-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+        display: none;
     }
 
     .search-input {
