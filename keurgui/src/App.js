@@ -8,7 +8,7 @@ import Inscription from "./Authentification/Inscription";
 import Dashboard from "./Dashboard/Dashboard";
 //import Footer from "./components/Footer";
 import About from "./About/About"; 
-import Contact from "./components/Contact";
+import Contact from "./Contact/Contact";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Layout() {
