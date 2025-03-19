@@ -70,11 +70,12 @@
     cursor: pointer;
     font-size: 24px;
     color: white;
-    margin-left: 15px;
+
+    margin-left: 315px;
     margin-bottom: 10px;
   }
   
   .user-icon:hover {
-    color: #01A768; /* Vous pouvez personnaliser la couleur de survol */
+    color: #01A768; 
   }
   

@@ -29,7 +29,7 @@ function Navbar({ userIconRef }) {
           <li><Link to="/contact" className="navbar-link" onClick={closeMenu}>Contact</Link></li>
           {/* Remplacé le bouton par un span qui contient l'icône */}
           <li className="user-icon" ref={userIconRef} onClick={openModal}>
-            <FaUser />
+            <FaUser style={{color:'white'}}/>
           </li>
         </ul>
 

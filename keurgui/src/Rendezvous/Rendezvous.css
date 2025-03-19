@@ -1,0 +1,93 @@
+/* Style principal */
+.rendezvous-container {
+    
+    background-color: #f8f9fc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.rendezvous-option {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.rendezvous-option:hover {
+    transform: scale(1.02);
+}
+
+.rendezvous-option h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    color: #34495e;
+}
+
+.cancel-btn {
+    background-color: #4e7ec2;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 80px;
+    margin-top: 10px;
+}
+
+.cancel-btn:hover {
+    background-color: #007bff;
+}
+
+.reschedule-btn {
+    background-color: #01A768;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 7px;
+    margin-top: 10px;
+}
+
+.reschedule-btn:hover {
+    background-color: #0b6c27;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+.validate-btn{
+    width: 99%;
+    margin-top: 10px;
+    margin-left: 5px;
+    border: #01A768;
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .rendezvous-container {
+        padding: 20px;
+    }
+}

@@ -6,35 +6,77 @@ import "./inscription.css";
 const Inscription = () => {
   const [role, setRole] = useState("patient");
   const [nom, setNom] = useState(""); // État pour le nom
+  const [prenom, setPrenom] = useState(""); // État pour le prénom
   const [email, setEmail] = useState(""); // État pour l'email
-  const [motDePasse, setMotDePasse] = useState(""); // État pour le mot de passe
+  const [password, setPassword] = useState(""); // Changement de motDePasse à password
   const [message, setMessage] = useState(""); // État pour le message de succès ou d'erreur
+  const [forgotPassword, setForgotPassword] = useState(""); // Pour la récupération de mot de passe
+  const [resetPassword, setResetPassword] = useState(""); // Pour la réinitialisation du mot de passe
   const navigate = useNavigate(); // Hook pour la navigation
 
   const handleConnexion = () => {
     navigate("/connexion"); // Rediriger vers la page de connexion
   };
 
+  const handleForgotPassword = async () => {
+    if (!email) {
+      setMessage("Veuillez entrer votre email.");
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:5000/api/auth/forgot-password", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const result = await response.json(); // Attente de la réponse JSON
+
+      if (response.ok) {
+        setMessage("Un email avec un nouveau mot de passe a été envoyé.");
+      } else {
+        setMessage(result.message || "Erreur lors de la récupération du mot de passe.");
+      }
+    } catch (error) {
+      console.error("Erreur lors de la récupération du mot de passe:", error);
+      setMessage("Une erreur s'est produite. Veuillez réessayer.");
+    }
+  };
+
   // Fonction pour soumettre le formulaire
   const handleSubmit = async (e) => {
     e.preventDefault(); // Empêche le rechargement de la page
+
+    // Vérification des champs (ajoute des validations si nécessaire)
+    if (!nom || !prenom || !email || !password) {
+      setMessage("Tous les champs sont obligatoires.");
+      return;
+    }
 
     // Prépare les données à envoyer à l'API
     const data = {
       role,
       nom,
+      prenom,
       email,
-      motDePasse,
+      password, // Utilise le bon nom de champ
     };
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/inscription/", {
+      const response = await fetch("http://localhost:5000/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data), // Envoie les données sous forme JSON
       });
+
+      const result = await response.json(); // Attente de la réponse JSON
+
+      console.log(result); // Affiche la réponse du backend pour le débogage
 
       if (response.ok) {
         // Si l'inscription réussit, afficher un message de succès
@@ -43,7 +85,7 @@ const Inscription = () => {
         setTimeout(() => navigate("/connexion"), 2000); // Redirige après 2 secondes
       } else {
         // Si l'inscription échoue, afficher un message d'erreur
-        setMessage("Erreur lors de l'inscription. Veuillez réessayer.");
+        setMessage(result.message || "Erreur lors de l'inscription. Veuillez réessayer.");
       }
     } catch (error) {
       console.error("Erreur lors de la soumission:", error);
@@ -74,7 +116,15 @@ const Inscription = () => {
               value={nom}
               onChange={(e) => setNom(e.target.value)} // Met à jour l'état
             />
+            <label>Prénom</label>
+            <input
+              type="text"
+              placeholder="Entrez votre prénom"
+              value={prenom}
+              onChange={(e) => setPrenom(e.target.value)} // Met à jour l'état
+            />
           </div>
+          
           <div className="form-group">
             <label>Email</label>
             <input
@@ -89,21 +139,32 @@ const Inscription = () => {
             <input
               type="password"
               placeholder="Choisissez un mot de passe"
-              value={motDePasse}
-              onChange={(e) => setMotDePasse(e.target.value)} // Met à jour l'état
+              value={password}
+              onChange={(e) => setPassword(e.target.value)} // Met à jour l'état
             />
           </div>
 
           <div className="form-actions">
-          <button type="submit" className="btn-connexion">
-  Se connecter
-</button>
+            <button type="button" onClick={handleConnexion} className="btn-connexion">
+              Se connecter
+            </button>
 
             <button type="submit" className="btn-inscription">
               S'inscrire
             </button>
           </div>
         </form>
+
+        <div className="forgot-password">
+          <h3>Mot de passe oublié ?</h3>
+          <input
+            type="email"
+            placeholder="Entrez votre email"
+            value={forgotPassword}
+            onChange={(e) => setForgotPassword(e.target.value)}
+          />
+          <button onClick={handleForgotPassword}>Réinitialiser le mot de passe</button>
+        </div>
 
         {/* Affichage du message de succès ou d'erreur */}
         {message && <p className="message">{message}</p>}

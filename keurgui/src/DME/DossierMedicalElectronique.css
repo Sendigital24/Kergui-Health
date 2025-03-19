@@ -1,0 +1,114 @@
+.dme-dashboard-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f8f9fc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dme-dashboard-container h1 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+.dme-search-bar {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* Table */
+.dme-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.dme-table th, .dme-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.dme-table th {
+  background-color: #f0f0f2b8;
+  color: black;
+}
+
+.dme-table tr:hover {
+  background-color: #f0f0f2;
+}
+
+/* Formulaire */
+.dme-form-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.dme-form-container input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.dme-add-btn {
+  background-color: #01a768;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dme-add-btn:hover {
+  background-color: #008c5a;
+}
+
+/* Boutons */
+.dme-update-btn {
+  background-color: #4e7ec2;
+  color: white;
+  padding: 5px;
+  margin-right: 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.dme-delete-btn {
+  background-color: red;
+  color: white;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.dme-update-btn:hover {
+  background-color: #2980b9;
+}
+
+.dme-delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dme-dashboard-container {
+    padding: 15px;
+  }
+
+  .dme-form-container {
+    flex-direction: column;
+  }
+
+  .dme-table, .dme-table th, .dme-table td {
+    font-size: 14px;
+  }
+}

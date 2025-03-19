@@ -32,7 +32,7 @@ const ListeConsultations = () => {
 
   return (
     <div className="container-fluid mt-5 h-[50]"style={{width:'92%',background:'white',marginLeft:'66px',padding:'20px'}}>
-      <div style={{marginLeft:'7px'}}>
+      <div style={{marginLeft:'37px'}}>
       <TitleText title="Liste des Consultations" text="Liste des consultations à suivre" />
       <Button text="Ajouter une consultation" onClick={handleOpenModal} color="green" className="add-button" />
       
@@ -79,9 +79,9 @@ const ListeConsultations = () => {
         </Modal>
       )}
 
-      <div className="consultations-table mt-4"style={{width:'99%',marginLeft:'6px'}}>
-        <table className="table table-bordered table-striped w-100" style={{marginRight:'10pz'}}>
-          <thead >
+      <div className="consultations-table mt-4"style={{width:'97%',marginLeft:'36px'}}>
+        <table className="table table-bordered table-striped w-100">
+          <thead>
             <tr className="table-light">
               <th>Patient</th>
               <th>Date</th>

@@ -1,0 +1,123 @@
+.dme-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff; /* Fond blanc */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* Table */
+.dme-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.dme-table th, .dme-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Lignes alternées (gris et blanc) */
+.dme-table tr.even-row {
+  background-color: #f2f2f2; /* Gris clair */
+}
+
+.dme-table tr.odd-row {
+  background-color: #ffffff; /* Blanc */
+}
+
+.dme-table th {
+  background-color: #f0f0f2b8;
+  color: black;
+}
+
+.dme-table tr:hover {
+  background-color: #dcdcdc; /* Gris lors du hover */
+}
+
+/* Formulaire */
+.form-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.form-container input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-btn {
+  background-color: #01a768;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.add-btn:hover {
+  background-color: #008c5a;
+}
+
+/* Boutons */
+.update-btn {
+  background-color: #4e7ec2;
+  color: white;
+  padding: 5px;
+  margin-right: 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.update-btn:hover {
+  background-color: #2980b9;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dme-container {
+    padding: 15px;
+  }
+
+  .form-container {
+    flex-direction: column;
+  }
+
+  .dme-table, .dme-table th, .dme-table td {
+    font-size: 14px;
+  }
+}

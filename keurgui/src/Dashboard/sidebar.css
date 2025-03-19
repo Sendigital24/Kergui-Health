@@ -16,7 +16,7 @@
 .sidebar-logo {
   display: flex;
   justify-content: center;
-  margin-bottom: 10px; /* Ajuster pour monter le logo */
+  margin-bottom: 10px; 
 }
 
 .sidebar-logo-img {
@@ -28,7 +28,7 @@
 .sidebar-content {
   flex-grow: 1;
   overflow-y: auto;
-  padding-right: 10px; /* Pour compenser le padding à droite du contenu */
+  padding-right: 10px; 
   position: relative;
   bottom: 20px;
 }
@@ -59,9 +59,22 @@
 }
 
 /* Animation d'inclinaison */
-@keyframes tiltAnimation {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(15deg); }
+/* Animation pour faire bouger les icônes */
+@keyframes moveLeftRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Appliquer l'animation sur les icônes */
+.sidebar-icon {
+  animation: moveLeftRight 2s ease-in-out infinite;
 }
 
 /* Sous-catégories */
@@ -85,6 +98,23 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
+/* Animation pour faire bouger les icônes des sous-menus */
+@keyframes moveLeftRightSubmenu {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Appliquer l'animation sur les icônes des sous-menus */
+.subcategory .sidebar-icon {
+  animation: moveLeftRightSubmenu 2s ease-in-out infinite;
 }
 
 /* Effet hover en bleu */

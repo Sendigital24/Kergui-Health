@@ -1,35 +1,35 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Importer useNavigate
-import logo from "../components/assets/logo2.png";
-import "./connexion.css";
+import { useNavigate } from "react-router-dom"; 
+import logo from "../components/assets/logo2.png"; 
+import "./connexion.css"; 
 
 const Connexion = () => {
-  const [role, setRole] = useState("patient");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate(); // Hook pour la navigation
+  const [role, setRole] = useState("patient"); 
+  const [email, setEmail] = useState(""); 
+  const [password, setPassword] = useState(""); 
+  const navigate = useNavigate(); 
 
-  // Fonction de connexion
   const handleConnexion = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/Connexion/", {
+      // Envoi de la requête de connexion à l'API
+      const response = await fetch("http://localhost:5000/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password, user_type: role }),
+        body: JSON.stringify({ email, password, role }), 
       });
 
       const data = await response.json();
 
       if (response.ok) {
         // Vérifie le rôle et redirige
-        if (data.user_type === "patient") {
-          navigate("/accueil");
-        } else if (data.user_type === "medecin") {
-          navigate("/dashboard");
+        if (data.user.role === "patient") {
+          navigate("/accueil"); 
+        } else if (data.user.role === "medecin") {
+          navigate("/dashboard"); 
         }
       } else {
         alert("Échec de la connexion. Vérifiez vos identifiants.");
