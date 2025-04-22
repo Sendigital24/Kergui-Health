@@ -1,0 +1,122 @@
+/* Container principal */
+.menu-container {
+    width: 100%;
+    position: relative;
+  }
+  
+  /* Navigation principale */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Logo */
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-img {
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .brand-name {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  /* Bouton hamburger (visible même sur desktop) */
+  .hamburger-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Contenu du menu (liens + secondaire) */
+  .menu-content {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  /* Quand le menu est ouvert */
+  .menu-content.show {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Liens du menu */
+  .navbar-links,
+  .secondary-navbar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .navbar-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Barre de recherche */
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .search-input {
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .search-btn {
+    background: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Responsive */
+  @media screen and (min-width: 1024px) {
+    .menu-content {
+      position: static;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      transform: none;
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    .navbar-links,
+    .secondary-navbar-links {
+      flex-direction: row;
+      gap: 20px;
+    }
+  
+    .hamburger-btn {
+      display: block;
+    }
+  }
+  

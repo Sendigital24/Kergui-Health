@@ -36,7 +36,7 @@ const RendezvousList = () => {
         return "red"; // Fond rouge
       case "En cours":
         return "blue"; // Fond bleu
-      case "Terminé":
+      case "Terminer":
         return "green"; // Fond vert
       default:
         return "white";

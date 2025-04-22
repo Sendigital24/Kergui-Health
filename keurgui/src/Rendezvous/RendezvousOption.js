@@ -7,7 +7,7 @@ const RendezvousOption = ({ title, appointments, onSelectDate, onCancel, selecte
   const [date, setDate] = useState(new Date());
   const [selectedDoctor, setSelectedDoctor] = useState("");
 
-  const doctors = ["Dr. Dupont", "Dr. Martin", "Dr. Bernard"];
+  const doctors = ["Dr. Diop", "Dr. Fall", "Dr. Bernard","Dr. Sow"];
 
   const handleDoctorSelection = (e) => {
     setSelectedDoctor(e.target.value);

@@ -1,35 +1,35 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; 
-import logo from "../components/assets/logo2.png"; 
-import "./connexion.css"; 
+import { useNavigate } from "react-router-dom";
+import logo from "../components/assets/logo2.png";
+import "./connexion.css";
 
 const Connexion = () => {
-  const [role, setRole] = useState("patient"); 
-  const [email, setEmail] = useState(""); 
-  const [password, setPassword] = useState(""); 
-  const navigate = useNavigate(); 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleConnexion = async (e) => {
     e.preventDefault();
 
     try {
-      // Envoi de la requête de connexion à l'API
       const response = await fetch("http://localhost:5000/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password, role }), 
+        body: JSON.stringify({ email, password }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        // Vérifie le rôle et redirige
+        localStorage.setItem("user", JSON.stringify(data.user));
+
+        // Redirection en fonction du rôle de l'utilisateur
         if (data.user.role === "patient") {
-          navigate("/accueil"); 
+          navigate("/accueil");
         } else if (data.user.role === "medecin") {
-          navigate("/dashboard"); 
+          navigate("/dashboard");
         }
       } else {
         alert("Échec de la connexion. Vérifiez vos identifiants.");
@@ -48,13 +48,6 @@ const Connexion = () => {
         </div>
         <h2 className="titre">Connexion</h2>
         <form onSubmit={handleConnexion}>
-          <div className="form-group">
-            <label>Rôle</label>
-            <select value={role} onChange={(e) => setRole(e.target.value)}>
-              <option value="patient">Patient</option>
-              <option value="medecin">Médecin</option>
-            </select>
-          </div>
           <div className="form-group">
             <label>Email</label>
             <input
@@ -75,13 +68,11 @@ const Connexion = () => {
               required
             />
           </div>
-
           <div className="forgot-password">
             <a href="/mot-de-passe-oublie" className="link-forgot">
               Mot de passe oublié ?
             </a>
           </div>
-
           <div className="button-container">
             <button type="submit" className="btn-connexion">
               Se connecter

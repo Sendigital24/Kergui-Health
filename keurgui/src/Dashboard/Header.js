@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FaUserCircle, FaBell, FaTimes } from "react-icons/fa"; // Importation de l'icône de notification
+import { FaUserCircle, FaBell, FaTimes } from "react-icons/fa"; 
 import "./header.css"; // Import du fichier CSS
 
 const Header = () => {
@@ -7,8 +7,8 @@ const Header = () => {
     "Bienvenue dans Keurgui Health, votre plateforme de télémédecine innovante qui facilite l'accès aux soins à distance, partout et à tout moment."
   );
   
-  const [isModalOpen, setIsModalOpen] = useState(false); // Etat pour gérer l'ouverture du modal
-  const [notifications, setNotifications] = useState(3); // Nombre de notifications (exemple: 3 notifications non lues)
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [notifications, setNotifications] = useState(3); 
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -18,9 +18,9 @@ const Header = () => {
           ? "Explorez des consultations médicales en ligne rapides et sécurisées, directement depuis chez vous, avec Keurgui Health."
           : "Bienvenue dans Keurgui Health, votre plateforme de télémédecine innovante qui facilite l'accès aux soins à distance, partout et à tout moment."
       );
-    }, 20000); // Le texte change toutes les 10 secondes (ralenti)
+    }, 20000); 
 
-    return () => clearInterval(interval); // Nettoyer l'intervalle lors du démontage du composant
+    return () => clearInterval(interval); 
   }, []);
 
   // Fonction pour ouvrir et fermer le modal

@@ -13,7 +13,7 @@ const Rendezvous = () => {
   useEffect(() => {
     setTimeout(() => {
       setAppointments([
-        { id: 1, title: "Consultation avec Dr. Dupont", date: "2025-03-20", time: "14:00" },
+        { id: 1, title: "Consultation avec Dr. Diop", date: "2025-03-20", time: "14:00" },
         
       ]);
       setIsLoading(false);

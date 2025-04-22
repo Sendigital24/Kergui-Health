@@ -1,0 +1,74 @@
+/* Inscription CSS */
+.inscription-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.inscription-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 96%;
+  max-width: 400px;
+}
+
+.logo-container {
+  text-align: center;
+}
+
+.logo-img {
+  width: 120px;
+}
+
+.titre {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.btn-inscription {
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 10px;
+  background-color: #4CAF50; /* Fond vert */
+  width: 48%; /* Réduire la largeur des boutons */
+}
+
+.btn-inscription:hover {
+  background-color: #007BFF; /* Hover bleu */
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Ajouter un écart entre les boutons */
+}
+
+.form-actions button {
+  width: 48%; /* Réduire la largeur des boutons */
+}
