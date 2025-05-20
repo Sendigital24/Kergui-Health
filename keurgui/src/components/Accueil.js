@@ -5,6 +5,7 @@ import Banniere from './Banniere';
 import Temoignage from './Temoignage'; 
 import './Accueil.css';
 import Footer from './Footer';
+import PaiementQRCode from './PaiementQRCode'; // pas avec des accolades {}
 
 import Service from './Service';
 function Accueil() {
@@ -17,6 +18,7 @@ function Accueil() {
       <Banniere />
 <Service/>
       <Temoignage /> 
+      <PaiementQRCode />
       <Footer />
     </div>
   );

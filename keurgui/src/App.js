@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from "react-route
 import Accueil from "./components/Accueil";
 import Rendezvous from "./Rendezvous/Rendezvous";
 
+import ValidationMedecins from "./Authentification/ValidationMedecins";
 import DossierMedicalElectronique from "./DME/DossierMedicalElectronique";
 import ConsulterMedecin from "./components/ConsulterMedecin";
 import Connexion from "./Authentification/Connexion";
@@ -28,6 +29,8 @@ function Layout() {
         <Route path="/dme" element={<DossierMedicalElectronique />} />
         <Route path="/consulter-medecin" element={<ConsulterMedecin />} />
         <Route path="/connexion" element={<Connexion />} />
+        
+    <Route path="/validation-medecins" element={<ValidationMedecins />} />
         <Route path="/inscription" element={<Inscription />} />
         <Route path="/dashboard/*" element={<Dashboard />} />
         <Route path="/joindre-medecin" element={<JoindreMedecin />} />

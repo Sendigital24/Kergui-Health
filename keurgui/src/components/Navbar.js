@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes, FaUser, FaSearch, FaComment, FaPhoneAlt, FaExclamationCircle } from 'react-icons/fa';
 import './Navbar.css';
@@ -6,10 +6,18 @@ import './Navbar.css';
 function Navbar({ userIconRef }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [userName, setUserName] = useState(""); // 👈 Nouveau
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      setUserName(user.nom || user.name || ""); // adapte selon ta base de données
+    }
+  }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
-
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
@@ -27,9 +35,11 @@ function Navbar({ userIconRef }) {
           <li><Link to="/connexion" className="navbar-link" onClick={closeMenu}>Connexion</Link></li>
           <li><Link to="/about" className="navbar-link" onClick={closeMenu}>About</Link></li>
           <li><Link to="/contact" className="navbar-link" onClick={closeMenu}>Contact</Link></li>
-          {/* Remplacé le bouton par un span qui contient l'icône */}
+
+          {/* Icône utilisateur avec nom */}
           <li className="user-icon" ref={userIconRef} onClick={openModal}>
-            <FaUser style={{color:'white'}}/>
+            <FaUser style={{ color: 'white' }} />
+            <span className="username" style={{ marginLeft: '5px', color: 'white',marginTop: '55px',fontSize: '15px' }}>{userName}</span>
           </li>
         </ul>
 
@@ -37,6 +47,7 @@ function Navbar({ userIconRef }) {
           {isMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </nav>
+
       <nav className="secondary-navbar">
         <div className="secondary-navbar-links">
           <Link to="/chat" className="navbar-link" onClick={closeMenu}><FaComment /> Chat</Link>
@@ -50,7 +61,7 @@ function Navbar({ userIconRef }) {
           </div>
         </div>
       </nav>
-      {/* Modal */}
+
       {isModalOpen && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -58,7 +69,7 @@ function Navbar({ userIconRef }) {
               <FaTimes />
             </button>
             <div className='btns'>
-              <button className='dcx'>Deconnexion</button>
+              <button className='dcx'>Déconnexion</button>
               <button className='mdp'>Changer mot de passe</button>
             </div>
           </div>
