@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import Accueil from "./components/Accueil";
 import Rendezvous from "./Rendezvous/Rendezvous";
-
 import ValidationMedecins from "./Authentification/ValidationMedecins";
 import DossierMedicalElectronique from "./DME/DossierMedicalElectronique";
 import ConsulterMedecin from "./components/ConsulterMedecin";
@@ -12,6 +11,7 @@ import Dashboard from "./Dashboard/Dashboard";
 import JoindreMedecin from './JoindreMedecin/JoindreMedecin';
 import About from "./About/About"; 
 import Contact from "./Contact/Contact";
+import Chatbot from "./components/Chatbot"; // 👈 Import ajouté
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Layout() {
@@ -25,17 +25,16 @@ function Layout() {
       <Routes>
         <Route path="/accueil" element={<Accueil />} />
         <Route path="/rendezvous" element={<Rendezvous />} />
-        
         <Route path="/dme" element={<DossierMedicalElectronique />} />
         <Route path="/consulter-medecin" element={<ConsulterMedecin />} />
         <Route path="/connexion" element={<Connexion />} />
-        
-    <Route path="/validation-medecins" element={<ValidationMedecins />} />
+        <Route path="/validation-medecins" element={<ValidationMedecins />} />
         <Route path="/inscription" element={<Inscription />} />
         <Route path="/dashboard/*" element={<Dashboard />} />
         <Route path="/joindre-medecin" element={<JoindreMedecin />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/chatbot" element={<Chatbot />} /> {/* ✅ Route ajoutée */}
       </Routes>
       {!isAuthPage && !isDashboard }
     </>
