@@ -1,61 +1,115 @@
+/* Container principal responsive */
+.rdv-container {
+  overflow-x: auto;
+  max-width: 100%;
+  padding: 20px;
+  background: white;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
 /* Table styles */
 table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
-  }
-  
-  thead {
-    background-color: #f7fafc;
-    
-  }
-  
-  td, th {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #e2e8f0;
-  }
-  
-  .actions .icon {
-    margin-right: 10px;
-    font-size: 18px;
-  }
-  
-  .actions .icon:hover {
-    color: blue;
-  }
-  
-  /* Classes pour lignes impaires/paire */
-  tr:nth-child(even) {
-    background-color: #f0f4f8;
-  }
-  
-  tr:nth-child(odd) {
-    background-color: #ffffff;
-  }
-  
-  /* Custom classes for action buttons */
-  .text-primary {
-    color: #007bff;
-  }
-  
-  .text-warning {
-    color: #ffc107;
-  }
-  
-  .text-danger {
-    color: #dc3545;
-  }
-  /* Style des éléments select dans la colonne Action */
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background-color: #f7fafc;
+}
+
+td, th {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #e2e8f0;
+}
+
+.actions .icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.actions .icon:hover {
+  color: blue;
+}
+
+/* Alternance de couleur des lignes */
+tr:nth-child(even) {
+  background-color: #f0f4f8;
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* Couleurs des actions */
+.text-primary {
+  color: #007bff;
+}
+
+.text-warning {
+  color: #ffc107;
+}
+
+.text-danger {
+  color: #dc3545;
+}
+
+/* Style des selects */
 .actions select {
-    border-radius: 5px;
-    padding: 5px;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  width: 120px;
+  font-size: 14px;
+}
+
+.actions select:hover {
+  opacity: 0.8;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .rdv-container {
+    padding: 10px;
+  }
+
+  table {
+    min-width: 100%;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    display: block;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
-    width: 120px;
-    font-size: 14px;
+    border-radius: 8px;
+    padding: 10px;
   }
-  
-  .actions select:hover {
-    opacity: 0.8;
+
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border: none;
+    border-bottom: 1px solid #eee;
   }
-  
+
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    flex-basis: 40%;
+  }
+
+  .actions select {
+    width: 100%;
+  }
+}

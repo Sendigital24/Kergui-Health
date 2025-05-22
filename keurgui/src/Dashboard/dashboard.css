@@ -2,17 +2,25 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color:#e6ffff;
+  background-color: #e6ffff;
+  overflow-x: hidden; /* ✨ empêche le scroll horizontal */
 }
 
 .dashboard-content {
-  display: flex;
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
+@media (min-width: 768px) {
+  .dashboard-content {
+    flex-direction: row;
+  }
+}
 
 .dashboard-main {
   flex-grow: 1;
   padding: 20px;
   background: #f8f9fa;
+  min-width: 0; /* ✨ important pour éviter que le contenu déborde */
 }

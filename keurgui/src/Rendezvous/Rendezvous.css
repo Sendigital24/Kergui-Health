@@ -1,4 +1,14 @@
 /* Style principal */
+.input-field {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
 .rendezvous-container {
     
     background-color: #f8f9fc;

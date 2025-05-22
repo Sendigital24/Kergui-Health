@@ -9,9 +9,12 @@ import Connexion from "./Authentification/Connexion";
 import Inscription from "./Authentification/Inscription";
 import Dashboard from "./Dashboard/Dashboard";
 import JoindreMedecin from './JoindreMedecin/JoindreMedecin';
-import About from "./About/About"; 
+import About from "./About/About";
 import Contact from "./Contact/Contact";
-import Chatbot from "./components/Chatbot"; // 👈 Import ajouté
+import Chatbot from "./components/Chatbot";
+import Header from "./Dashboard/Header";
+
+import { NotificationProvider } from "./Contexts/NotificationContext";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Layout() {
@@ -21,8 +24,9 @@ function Layout() {
 
   return (
     <>
-      {!isAuthPage && !isDashboard && location.pathname === "/" && <Accueil />}
+      {!isAuthPage && !isDashboard && <Header />}
       <Routes>
+        <Route path="/" element={<Accueil />} />
         <Route path="/accueil" element={<Accueil />} />
         <Route path="/rendezvous" element={<Rendezvous />} />
         <Route path="/dme" element={<DossierMedicalElectronique />} />
@@ -34,18 +38,19 @@ function Layout() {
         <Route path="/joindre-medecin" element={<JoindreMedecin />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/chatbot" element={<Chatbot />} /> {/* ✅ Route ajoutée */}
+        <Route path="/chatbot" element={<Chatbot />} />
       </Routes>
-      {!isAuthPage && !isDashboard }
     </>
   );
 }
 
 function App() {
   return (
-    <Router>
-      <Layout />
-    </Router>
+    <NotificationProvider>
+      <Router>
+        <Layout />
+      </Router>
+    </NotificationProvider>
   );
 }
 
