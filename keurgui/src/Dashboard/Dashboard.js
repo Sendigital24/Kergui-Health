@@ -28,7 +28,7 @@ function Dashboard() {
 
       {/* Header */}
       <div className="header-container">
-        <Header />
+        
       </div>
 
       <div className="dashboard-content flex-grow-1 d-flex flex-column flex-md-row">

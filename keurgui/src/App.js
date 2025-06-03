@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+
 import Accueil from "./components/Accueil";
 import Rendezvous from "./Rendezvous/Rendezvous";
 import ValidationMedecins from "./Authentification/ValidationMedecins";
@@ -12,19 +13,20 @@ import JoindreMedecin from './JoindreMedecin/JoindreMedecin';
 import About from "./About/About";
 import Contact from "./Contact/Contact";
 import Chatbot from "./components/Chatbot";
-import Header from "./Dashboard/Header";
+import Header from "./Dashboard/Header"; // ✅ Header uniquement pour dashboard
 
 import { NotificationProvider } from "./Contexts/NotificationContext";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Layout() {
   const location = useLocation();
-  const isAuthPage = location.pathname === "/connexion" || location.pathname === "/inscription";
-  const isDashboard = location.pathname.startsWith("/dashboard");
+
+  const isDashboard = location.pathname.startsWith("/dashboard"); // ✅ condition unique
 
   return (
     <>
-      {!isAuthPage && !isDashboard && <Header />}
+      {isDashboard && <Header />} {/* ✅ affiché uniquement pour dashboard */}
       <Routes>
         <Route path="/" element={<Accueil />} />
         <Route path="/accueil" element={<Accueil />} />
