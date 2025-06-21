@@ -13,7 +13,7 @@ import JoindreMedecin from './JoindreMedecin/JoindreMedecin';
 import About from "./About/About";
 import Contact from "./Contact/Contact";
 import Chatbot from "./components/Chatbot";
-import Header from "./Dashboard/Header"; // ✅ Header uniquement pour dashboard
+import Header from "./Dashboard/Header";
 
 import { NotificationProvider } from "./Contexts/NotificationContext";
 
@@ -21,12 +21,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Layout() {
   const location = useLocation();
-
-  const isDashboard = location.pathname.startsWith("/dashboard"); // ✅ condition unique
+  const isDashboard = location.pathname.startsWith("/dashboard");
 
   return (
     <>
-      {isDashboard && <Header />} {/* ✅ affiché uniquement pour dashboard */}
+      {isDashboard && <Header />}
       <Routes>
         <Route path="/" element={<Accueil />} />
         <Route path="/accueil" element={<Accueil />} />

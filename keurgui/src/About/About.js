@@ -56,7 +56,7 @@ function About() {
             l'analyse des symptômes et la détection d'anomalies médicales via l'IA.
           </p>
           <p>
-            Grâce à une architecture moderne utilisant React, Django et des microservices
+            Grâce à une architecture moderne utilisant React, Node Js , Mysql et des microservices
             basés sur Docker et Kubernetes, nous assurons une plateforme fiable, évolutive et sécurisée.
           </p>
         </div>
